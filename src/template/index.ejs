@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Docker Example</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+        <style>
+            html, body {
+                padding: 0;
+                margin: 0;
+                font-family: Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+                line-height: 28px;
+            }
+
+            .container {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Hi, you have visited this page <span id="times"></span> time(s)!</h1>
+        </div>
+        <script type="application/javascript">
+            var times = document.querySelector("#times");
+            var visits = window.localStorage.getItem('visits') || 0;
+            times.textContent = visits;
+
+            window.localStorage.setItem('visits', parseInt(visits) + 1);
+        </script>
+    </body>
+</html>
